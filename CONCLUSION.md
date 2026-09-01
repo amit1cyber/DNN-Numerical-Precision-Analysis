@@ -1,7 +1,7 @@
-DNN NUMERICAL RANGE AND PRECISION ANALYSIS
-CONCLUSION AND PRECISION COMPARISON MATRIX
+## DNN NUMERICAL RANGE AND PRECISION ANALYSIS
+## CONCLUSION AND PRECISION COMPARISON MATRIX
 
-1. OVERALL FINDINGS
+## 1. OVERALL FINDINGS
 
 The numerical analysis of ResNet-18 training on CIFAR-10 shows that different
 DNN quantities have substantially different numerical ranges and precision
@@ -22,7 +22,7 @@ updates, are considerably more precision-sensitive than many forward-path
 quantities.
 
 
-2. FP32 VS LOWER-PRECISION COMPARISON MATRIX
+## 2. FP32 VS LOWER-PRECISION COMPARISON MATRIX
 
 Legend:
   ++  Strong candidate based on numerical analysis
@@ -42,7 +42,7 @@ Weight updates     ++     +/-       -          -         -       -
 Output logits      ++     +        +/-        +/-       +/-     +/-
 
 
-3. FORMAT-WISE COMPARISON
+## 3. FORMAT-WISE COMPARISON
 
 Criterion                  FP32      FP16      FP8       INT16      INT8
 ---------------------------------------------------------------------------
@@ -58,9 +58,9 @@ Updates                    Strongest Conditional Poor      Poor      Poor
   values are important to the computation.
 
 
-4. KEY NUMERICAL EVIDENCE
+## 4. KEY NUMERICAL EVIDENCE
 
-4.1 Gradients
+## 4.1 Gradients
 
 The worst observed gradient tensor was:
 
@@ -92,7 +92,7 @@ appropriate mixed-precision techniques, while direct FP8 or fixed-point
 representation with one scale is substantially more challenging.
 
 
-4.2 Weight Updates
+## 4.2 Weight Updates
 
 The worst observed update tensor was:
 
@@ -123,7 +123,7 @@ update. INT8 and INT16 with a single per-tensor scale can also lose the
 smallest updates.
 
 
-4.3 Weights
+## 4.3 Weights
 
 The worst observed weight tensor was:
 
@@ -152,7 +152,7 @@ possible when appropriate scaling, calibration, and possibly per-channel
 quantization are used.
 
 
-4.4 Activations
+## 4.4 Activations
 
 The worst observed activation tensor was:
 
@@ -181,7 +181,7 @@ considered for selected layers, but its reduced precision near zero must be
 examined carefully.
 
 
-4.5 Inputs
+## 4.5 Inputs
 
 The worst observed input-related tensor was:
 
@@ -214,7 +214,7 @@ FP16 is a strong candidate. Integer representations may also be possible
 when proper scaling and calibration are used.
 
 
-4.6 Biases
+## 4.6 Biases
 
 The worst observed bias tensor was:
 
@@ -242,7 +242,7 @@ Biases are comparatively tolerant of reduced precision. FP16 is a strong
 candidate, and INT16 may also be feasible with suitable scaling.
 
 
-5. INT8 AND INT16 SCALING ANALYSIS
+## 5. INT8 AND INT16 SCALING ANALYSIS
 
 Symmetric per-tensor scaling was evaluated using:
 
@@ -266,7 +266,7 @@ The present assignment evaluates numerical range and precision rather than
 end-to-end quantized model accuracy.
 
 
-6. FINAL PRECISION RECOMMENDATION
+## 6. FINAL PRECISION RECOMMENDATION
 
 DNN Data          Recommended Representation       Main Reason
 ---------------------------------------------------------------------------
@@ -288,7 +288,7 @@ preserve the full observed dynamic range of some training quantities using a
 single scale.
 
 
-7. OVERALL CONCLUSION
+## 7. OVERALL CONCLUSION
 
 The experiment demonstrates that there is no single numerical representation
 that is optimal for every DNN quantity.
@@ -324,7 +324,7 @@ end-to-end lower-precision implementation and evaluation, which was not
 required by the assignment.
 
 
-8. METHODOLOGICAL NOTE
+## 8. METHODOLOGICAL NOTE
 
 The ResNet-18/CIFAR-10 training experiment was performed in FP32 for
 30 epochs, with measurements collected at the beginning, middle, and end
