@@ -72,6 +72,12 @@ $$
 
 The logarithm of the dynamic range is also reported in orders of magnitude.
 
+## Results and Conclusion
+
+The complete numerical results are available in the `results/csv/` directory.
+
+[View the detailed conclusion and precision comparison matrix](CONCLUSION.md)
+
 ## 4. Distribution Plots
 
 Two distribution plots are generated for each analyzed layer:
