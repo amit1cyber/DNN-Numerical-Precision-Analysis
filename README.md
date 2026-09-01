@@ -202,13 +202,3 @@ The final training summary can be generated with:
 ```bash
 python final_summary_table.py
 ```
-
-## 10. Note on Lower-Precision Implementation
-
-The assignment specifies that implementation of the models in FP16, FP8, INT16, or INT8 is not required. Accordingly, all neural-network computation in this project is performed in FP32. Lower-precision formats are assessed only from the observed numerical range and resolution characteristics.
-
-## 11. Author
-
-Name: [Your Name]
-
-Course: M.Tech Data Science and AI
