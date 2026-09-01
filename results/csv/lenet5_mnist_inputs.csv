@@ -1,0 +1,2 @@
+layer,minimum,maximum,smallest_nonzero,zero_percent,minimum_spacing,maximum_abs
+network_input,0.0,1.0,0.003921568859368563,80.71436708516397,0.003921568393707275,1.0

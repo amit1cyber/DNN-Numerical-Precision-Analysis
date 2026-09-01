@@ -1,0 +1,2 @@
+layer,minimum,maximum,smallest_nonzero,zero_percent,minimum_spacing,maximum_abs
+output_logits,-8.689316488563747e-10,1.1337836225422393e-09,1.2037887986079287e-16,0.0,1.0842021724855044e-19,1.1337836225422393e-09

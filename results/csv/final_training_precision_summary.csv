@@ -1,0 +1,7 @@
+data_type,stage,layer,maximum_abs,smallest_nonzero,dynamic_range,log10_dynamic_range,FP16,FP8_E4M3,FP8_E5M2,INT16,INT8,overall_conclusion
+inputs,end,layer1.0.conv1,9.57875633239746,2.831220626831055e-07,33832602.947368406,7.5293354119822355,Likely,Caution,Caution,Caution,Caution,FP16 is strongly plausible; INT8 requires scaling/calibration.
+weights,end,layer4.0.conv2.weight,0.1621730029582977,6.971784954901139e-11,2326133178.337503,9.366634575810028,Caution,Caution,Caution,Caution,Caution,FP16 is a strong candidate; INT8/INT16 may be possible with suitable scaling.
+activations,middle,layer4.1.conv2,0.3011650145053863,6.621121428906917e-09,45485499.35824176,7.657872966933752,Caution,Caution,Caution,Caution,Caution,FP16 is a strong candidate; FP8 may be viable for selected layers.
+gradients,beginning,layer4.0.downsample.0.weight,0.0178461875766515,5.3141840835593465e-14,335821779901.5054,11.526108859116809,Caution,Caution,Caution,Caution,Caution,Higher precision is preferable; FP8 and fixed-point formats are precision-sensitive.
+updates,end,layer4.0.conv2.weight,0.0011070985347032,3.5034475320827596e-14,31600260159.884357,10.499690658110085,Caution,Caution,Caution,Caution,Caution,Most precision-sensitive quantity; FP32 is safest and FP16 may lose tiny updates.
+biases,end,layer4.1.bn2.bias,0.0790156424045562,1.6509875422343612e-06,47859.623639328325,4.6799692790662695,Likely,Caution,Caution,Likely,Caution,FP16 is a strong candidate; integer formats require appropriate scaling.
